@@ -1,16 +1,27 @@
-const initialState = []
+import { cloneDeep } from 'lodash/lang'
+
+const initialState = {
+  allIds: [],
+  byId: {},
+  initialized: false
+}
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case 'INIT_ITEMS':
+      return {
+        ...action.payload,
+        initialized: true
+      }
+
     case 'ADD_ITEM':
-      return [
-        ...state,
-        {
-          id: action.id,
-          name: action.name,
-          price: action.price,
-        }
-      ]
+      const item = action.payload
+      const nextState = cloneDeep(state)
+
+      nextState.allIds.push(item.id)
+      nextState.byId[item.id] = item
+
+      return nextState
     default:
       return state
   }

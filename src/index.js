@@ -1,20 +1,29 @@
 import React from 'react';
-import { render } from 'react-dom'
+import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 
-import './index.css'
 import App from './App'
 import configureStore from './data/configureStore'
 import registerServiceWorker from './registerServiceWorker';
 
 const dataStore = configureStore()
-
 const rootElement = document.getElementById('root')
 
-render(
-  <Provider store={dataStore}>
-    <App />
-  </Provider>,
-  rootElement);
+const render = Component => {
+  ReactDOM.render(
+    <Provider store={dataStore}>
+      <Component />
+    </Provider>,
+    rootElement)
+}
 
-registerServiceWorker();
+render(App)
+
+if (module.hot) {
+  module.hot.accept('./App', () => {
+    const NextApp = require('./App').default
+    render(NextApp)
+  })
+}
+
+registerServiceWorker()

@@ -2,8 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 //
-import { initializeItems, addItem } from '../../data/items/actions'
-import { itemsSelector } from '../../data/items/selectors'
+import { initializeItems, addItem } from 'data/items/actions'
+import { itemsSelector } from 'data/items/selectors'
+import ItemList from 'displays/Items/ItemList'
 
 class ItemsPage extends React.Component {
   componentDidMount () {
@@ -20,11 +21,6 @@ class ItemsPage extends React.Component {
   render () {
     return (
       <div>
-        <ul>
-          {
-            this.props.items.map(item => <li key={item.id}>{item.name} - {item.price}</li>)
-          }
-        </ul>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor='name'>
             Name:
@@ -36,6 +32,7 @@ class ItemsPage extends React.Component {
           </label>
           <input type='submit' value='Submit' />
         </form>
+        <ItemList items={this.props.items}/>
       </div>
     )
   }

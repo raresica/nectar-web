@@ -2,7 +2,7 @@ import app from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/firestore'
 //
-import connectionConfig from './connection.config'
+import connectionConfig from './connection.secrets'
 import firestoreConfig from './firestore.config'
 
 // Establish connection to firebase

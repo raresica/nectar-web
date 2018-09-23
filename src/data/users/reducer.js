@@ -1,21 +1,20 @@
 import { cloneDeep } from 'lodash/lang'
 
 const initialState = {
-  allIds: [],
-  byId: {},
-  initialized: false
+  email: '',
+  authenticated: false
 }
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'INIT_ITEMS': {
+    case 'SIGN_IN': {
       return {
         ...action.payload,
         initialized: true
       }
     }
 
-    case 'ADD_ITEM': {
+    case 'SIGN_UP': {
       const item = action.payload
       const nextState = cloneDeep(state)
 

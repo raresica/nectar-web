@@ -5,9 +5,9 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import './App.css';
 import 'typeface-montserrat'
 import 'typeface-roboto'
-import theme from './theme'
-import Header from 'displays/App/Header/Header'
-import Footer from 'displays/App/Footer'
+import theme from 'views/theme'
+import Header from 'views/App/Header/Header'
+import Footer from 'views/App/Footer'
 import Routes from 'pages/Routes'
 
 class App extends React.Component {
@@ -16,7 +16,7 @@ class App extends React.Component {
       <ThemeProvider theme={theme}>
         <Router>
           <div className="App">
-            <Header />
+            {/* <Header /> */}
             <Routes />
             <Footer />
           </div>

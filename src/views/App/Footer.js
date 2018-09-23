@@ -44,7 +44,8 @@ class Footer extends React.Component {
         Temporary bottom navigation to easy development
         <BottomNavigation value={currentLocation} onChange={this.handleChange} showLabels>
           <BottomNavigationAction label='Home' value='/' icon={<HomeIcon />} />
-          <BottomNavigationAction label='Sign up' value='/sign-up' icon={<UserIcon />} />
+          <BottomNavigationAction label='Sign in' value='/users/sign-in' icon={<UserIcon />} />
+          <BottomNavigationAction label='Sign up' value='/users/sign-up' icon={<UserIcon />} />
           <BottomNavigationAction label='About' value='/about' icon={<FavoriteIcon />} />
           <BottomNavigationAction label='Items' value='/items' icon={<ListIcon />} />
         </BottomNavigation>

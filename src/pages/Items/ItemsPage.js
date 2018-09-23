@@ -1,10 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-//
+// data
 import { initializeItems, addItem } from 'data/items/actions'
 import { itemsSelector } from 'data/items/selectors'
-import ItemList from 'displays/Items/ItemList'
+// views
+import ItemList from 'views/Items/ItemList'
 
 class ItemsPage extends React.Component {
   componentDidMount () {
@@ -32,7 +33,7 @@ class ItemsPage extends React.Component {
           </label>
           <input type='submit' value='Submit' />
         </form>
-        <ItemList items={this.props.items}/>
+        <ItemList items={this.props.items} />
       </div>
     )
   }

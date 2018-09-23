@@ -3,11 +3,11 @@ import logger from 'redux-logger'
 import thunk from 'redux-thunk' // TODO consider redux-sagas instead
 
 import itemsReducer from './items/reducer'
-// import usersReducer from './users/reducer'
+import usersReducer from './users/reducer'
 
 const rootReducer = combineReducers({
-  items: itemsReducer
-  // users: usersReducer
+  items: itemsReducer,
+  users: usersReducer
 })
 
 const middlewares = [

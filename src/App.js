@@ -15,8 +15,8 @@ class App extends React.Component {
     return (
       <ThemeProvider theme={theme}>
         <Router>
-          <div className="App">
-            {/* <Header /> */}
+          <div className='App'>
+            <Header />
             <Routes />
             <Footer />
           </div>
@@ -26,4 +26,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default App

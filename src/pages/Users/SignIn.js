@@ -47,11 +47,7 @@ const styles = {
 // inject the classes prop
 const StyledPage = withStyles(styles)(SignUpPage)
 
-// data from redux
-const mapState = state => ({
-  authenticated: state.users.authenticated
-})
 // actions
 const mapDispatch = dispatch => bindActionCreators({ signIn }, dispatch)
 // connect the component
-export default connect(mapState, mapDispatch)(StyledPage)
+export default connect(null, mapDispatch)(StyledPage)

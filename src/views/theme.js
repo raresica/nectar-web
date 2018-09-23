@@ -1,22 +1,18 @@
-const theme = {
-  spacing: 8,
-  main: 'mediumseagreen',
+import { createMuiTheme } from '@material-ui/core/styles'
+import purple from '@material-ui/core/colors/purple'
+import orange from '@material-ui/core/colors/orange'
+import 'typeface-montserrat'
+import 'typeface-roboto'
+
+/**
+ * Override the default material-ui theme:
+ * https://material-ui.com/customization/default-theme/
+ */
+const theme = createMuiTheme({
   palette: {
-    white: {
-      '100': '#FAFAFA',
-      '200': '#F5F5F5',
-      '300': '#EEEEEE',
-      '400': '#E0E0E0',
-      '500': '#BDBDBD',
-    },
-    black: {
-      '100': '#212121',
-      '200': '#424242',
-      '300': '#616161',
-      '400': '#757575',
-      '500': '#9E9E9E',
-    }
+    primary: orange,
+    secondary: purple
   }
-}
+})
 
 export default theme

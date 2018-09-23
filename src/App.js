@@ -1,29 +1,43 @@
 import React from 'react'
-import { ThemeProvider } from 'styled-components'
+import { MuiThemeProvider, withStyles } from '@material-ui/core/styles'
 import { BrowserRouter as Router } from 'react-router-dom'
+import CssBaseline from '@material-ui/core/CssBaseline'
 //
-import './App.css';
-import 'typeface-montserrat'
-import 'typeface-roboto'
 import theme from 'views/theme'
-import Header from 'views/App/Header/Header'
 import Footer from 'views/App/Footer'
 import Routes from 'pages/Routes'
 
 class App extends React.Component {
   render () {
+    const { classes } = this.props
+    // style the body element
+    document.body.className = classes.prettyBody
+
     return (
-      <ThemeProvider theme={theme}>
-        <Router>
-          <div className='App'>
-            <Header />
-            <Routes />
-            <Footer />
-          </div>
-        </Router>
-      </ThemeProvider>
-    );
+      <React.Fragment>
+        {/* normalize css across browsers */}
+        <CssBaseline />
+        <MuiThemeProvider theme={theme}>
+          <Router>
+            <div className={classes.app}>
+              <Routes />
+              <Footer />
+            </div>
+          </Router>
+        </MuiThemeProvider>
+      </React.Fragment>
+    )
   }
 }
 
-export default App
+const styles = {
+  prettyBody: {
+    backgroundColor: theme.palette.primary[100],
+    fontFamily: theme.typography.fontFamily
+  },
+  app: {
+    overflow: 'hidden'
+  }
+}
+
+export default withStyles(styles)(App)

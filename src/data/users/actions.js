@@ -8,10 +8,7 @@ export const signIn = (email, password) => {
       .then(user => {
         dispatch({ type: 'SIGN_IN', payload: user })
       })
-      .catch(err => {
-        const action = alertUser(err.message)
-        dispatch(action)
-      })
+      .catch(err => dispatch(alertUser(err.message)))
   }
 }
 
@@ -22,5 +19,6 @@ export const signUp = (email, password) => {
       .then(user => {
         dispatch({ type: 'SIGN_UP', payload: user })
       })
+      .catch(err => dispatch(alertUser(err.message)))
   }
 }

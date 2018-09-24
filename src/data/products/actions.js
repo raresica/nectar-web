@@ -1,9 +1,18 @@
 import * as productsApi from 'api/products'
+import { log } from 'utils'
+
+// interface Product {
+//   description: String;
+//   id: String;
+//   // kitchenId: DocumentReference { _key: DocumentKey, firestore: Firestore, _firestoreClient: FirestoreClient }
+//   price: Number;
+//   title: String;
+// }
 
 export const initializeProducts = () => {
   return dispatch => {
     productsApi.find()
-      .then(productList => {
+      .then((productList) => {
         const allIds = []
         const byId = {}
 
@@ -17,15 +26,21 @@ export const initializeProducts = () => {
 
         dispatch({ type: 'INIT_ITEMS', payload: { allIds, byId } })
       })
+      .catch(err => dispatch(alertUser(err.message)))
   }
 }
 
+/**
+ *
+ * @param {string} title
+ * @param {number} price
+ */
 export const addProduct = (title, price) => {
   return dispatch => {
     const product = { title, price }
     productsApi.create(product)
       .then(id => {
-        console.log('Document written with ID: ', id)
+        log('Document written with ID: ', id)
 
         product.id = id
         const action = {
@@ -35,8 +50,6 @@ export const addProduct = (title, price) => {
 
         dispatch(action)
       })
-      .catch(error => {
-        console.error('Error adding product: ', error);
-      })
+      .catch(err => dispatch(alertUser(err.message)))
   }
 }

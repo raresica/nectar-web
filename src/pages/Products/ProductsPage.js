@@ -14,8 +14,8 @@ class ProductsPage extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    const title = event.target['title'].value
-    const price = event.target['price'].value
+    const title = event.target.title.value
+    const price = event.target.price.value
     this.props.addProduct(title, price)
   }
 

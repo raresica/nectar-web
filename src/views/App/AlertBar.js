@@ -21,11 +21,11 @@ class AlertBar extends React.Component {
   }
 
   render () {
-    const { classes, nextAlert, dismissAlert } = this.props
+    const { classes, nextAlert } = this.props
 
     if (nextAlert !== null) {
       // dismiss the alert after timeout
-      setTimeout(dismissAlert, AUTO_HIDE_DURATION)
+      setTimeout(this.props.dismissAlert, AUTO_HIDE_DURATION)
     }
 
     return (

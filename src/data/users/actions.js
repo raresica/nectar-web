@@ -1,4 +1,5 @@
 import * as usersApi from 'api/users'
+import { alertUser } from 'data/app/actions'
 
 export const signIn = (email, password) => {
   console.log('Attempting sign in with: ', email, password)
@@ -6,6 +7,10 @@ export const signIn = (email, password) => {
     usersApi.signIn(email, password)
       .then(user => {
         dispatch({ type: 'SIGN_IN', payload: user })
+      })
+      .catch(err => {
+        const action = alertUser(err.message)
+        dispatch(action)
       })
   }
 }

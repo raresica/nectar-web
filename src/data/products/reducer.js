@@ -16,11 +16,11 @@ const reducer = (state = initialState, action) => {
     }
 
     case 'ADD_ITEM': {
-      const item = action.payload
+      const product = action.payload
       const nextState = cloneDeep(state)
 
-      nextState.allIds.push(item.id)
-      nextState.byId[item.id] = item
+      nextState.allIds.push(product.id)
+      nextState.byId[product.id] = product
 
       return nextState
     }

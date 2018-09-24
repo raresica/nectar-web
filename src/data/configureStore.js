@@ -2,11 +2,11 @@ import { createStore, combineReducers, applyMiddleware } from 'redux'
 import logger from 'redux-logger'
 import thunk from 'redux-thunk' // TODO consider redux-sagas instead
 
-import itemsReducer from './items/reducer'
+import productsReducer from './products/reducer'
 import usersReducer from './users/reducer'
 
 const rootReducer = combineReducers({
-  items: itemsReducer,
+  products: productsReducer,
   users: usersReducer
 })
 

@@ -6,18 +6,18 @@ import GridListTileBar from '@material-ui/core/GridListTileBar'
 import IconButton from '@material-ui/core/IconButton'
 import AddIcon from '@material-ui/icons/Add'
 
-const ItemList = ({ items }) => (
+const ProductList = ({ products }) => (
   <GridList cellHeight={180}>
     <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
       <ListSubheader component="div">Products</ListSubheader>
     </GridListTile>
     {
-      items.map(item => (
-        <GridListTile key={item.id}>
-          <img src="https://picsum.photos/300/300?image=999" alt={item.name}></img>
+      products.map(product => (
+        <GridListTile key={product.id}>
+          <img src="https://picsum.photos/300/300?image=999" alt={product.name}></img>
           <GridListTileBar
-            title={item.name}
-            subtitle={<span>${item.price}</span>}
+            title={product.title}
+            subtitle={<span>${product.price}</span>}
             actionIcon={
               <IconButton>
                 <AddIcon color='primary' />
@@ -30,4 +30,4 @@ const ItemList = ({ items }) => (
   </GridList>
 )
 
-export default ItemList
+export default ProductList

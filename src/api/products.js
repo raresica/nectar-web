@@ -1,11 +1,11 @@
 import { firestoreInstance } from 'api/firebase'
 
 export function find () {
-  return firestoreInstance.collection('items').get()
+  return firestoreInstance.collection('products').get()
 }
 
-export function create (item) {
-  return firestoreInstance.collection('items').add(item)
+export function create (product) {
+  return firestoreInstance.collection('products').add(product)
     // let's return only the newly generated id
     .then(documentReference => documentReference.id)
 }

@@ -23,6 +23,7 @@ class Footer extends React.Component {
           <BottomNavigationAction label='Places' value='/' icon={<HomeIcon />} />
           <BottomNavigationAction label='Notifications' value='/about' icon={<NotificationsIcon />} />
           <BottomNavigationAction label='Profile' value='/users' icon={<UserIcon />} />
+          <BottomNavigationAction label='ShoppingCart' value='/shopping-cart' icon={<UserIcon />} />
         </BottomNavigation>
       </div>
     )

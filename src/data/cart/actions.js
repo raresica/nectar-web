@@ -2,32 +2,27 @@ import * as cartApi from 'api/cart.js'
 
 export const initializeCart = () => {
   return dispatch => {
-    cartApi.find()
-      .then(
-        dispatch({ type: 'INIT_CART'})
-      )
+    const localStorage = window.localStorage
+    if (localStorage.cart) {
+      const initialCart = localStorage.cart
+      dispatch({ type: 'INIT_CART', payload: initialCart })
+    }
   }
 }
 
-export const addProductToCart = (title, price, quantity) => {
+export const addProductToCart = (product) => {
   return dispatch => {
-    const addedProduct = { title, price, quantity }
-    cartApi.create(addedProduct)
-      .then(id => {
+    try {
+      const action = {
+        type: 'ADD_TO_CART',
+        payload: product
+      }
 
-        // search to see if already added and increment +1 on quantity
-        console.log('Document written with ID: ', id)
-
-        addedProduct.id = id
-        const action = {
-          type: 'ADD_TO_CART',
-          payload: addedProduct
-        }
-
-        dispatch(action)
-      })
-      .catch(error => {
+      dispatch(action)
+    } catch (err) {
+      error => {
         console.error('Error adding product: ', error);
-      })
+      }
+    }
   }
 }

@@ -4,10 +4,12 @@ import thunk from 'redux-thunk' // TODO consider redux-sagas instead
 
 import productsReducer from './products/reducer'
 import usersReducer from './users/reducer'
+import cartReducer from './cart/reducer'
 
 const rootReducer = combineReducers({
   products: productsReducer,
-  users: usersReducer
+  users: usersReducer,
+  cart : cartReducer
 })
 
 const middlewares = [

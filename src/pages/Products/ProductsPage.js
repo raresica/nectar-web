@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux'
 // data
 import { initializeProducts, addProduct } from 'data/products/actions'
 import { productsSelector } from 'data/products/selectors'
+import {addProductToCart} from 'data/cart/actions'
 // views
 import ProductList from 'views/Products/ProductList'
 
@@ -18,8 +19,8 @@ class ProductsPage extends React.Component {
     const price = event.target['price'].value
     this.props.addProduct(title, price)
   }
-
   render () {
+    console.log(this.props,'PROPS')
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -33,7 +34,7 @@ class ProductsPage extends React.Component {
           </label>
           <input type='submit' value='Submit' />
         </form>
-        <ProductList products={this.props.products} />
+        <ProductList addProductToCart={this.props.addProductToCart} products={this.props.products} />
       </div>
     )
   }
@@ -43,6 +44,6 @@ const mapState = state => ({
   products: productsSelector(state)
 })
 
-const mapDispatch = dispatch => bindActionCreators({ initializeProducts, addProduct }, dispatch)
+const mapDispatch = dispatch => bindActionCreators({ initializeProducts, addProduct, addProductToCart }, dispatch)
 
 export default connect(mapState, mapDispatch)(ProductsPage)

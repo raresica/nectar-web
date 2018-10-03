@@ -17,22 +17,19 @@ class ShoppingCart extends React.Component {
   }
 
   render() {
-    console.log(this.props, 'Props')
     return (
       <div>
-        <ShoppingList addedItems={this.props.cart.addedItems} />
+        <ShoppingList total={this.props.cart.total} addedItems={this.props.cart.addedItems} />
       </div>
     )
   }
 }
 
 const mapState = state => {
-  console.log(state,'wawawa')
   return ({
     cart: cartSelector(state)
   })
 }
-
 const mapDispatch = dispatch => bindActionCreators({ initializeCart, addProductToCart }, dispatch)
 
 export default connect(mapState, mapDispatch)(ShoppingCart)

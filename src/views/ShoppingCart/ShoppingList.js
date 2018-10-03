@@ -16,23 +16,14 @@ import Button from '@material-ui/core/Button'
 //   quantity: Number
 // }
 
-const ShoppingList = ({ addedItems }) => {
-  let basket = {
-    allItems: [
-      { name: "curdecal", price: 10, quantity: 1 },
-      { name: "vomadestrumf", price: 15, quantity: 2 }
-    ],
-    total: 0
-  }
-  // basket.allItems.forEach(item => {
-  //   basket.total += item.price * item.quantity;
-  // })
+const ShoppingList = ({ addedItems,total }) => {
+  console.log(addedItems,'wawaaw')
 
   return (
     <div className='wawawa'>
       <List>
         {
-          basket.allItems.map(item => {
+          addedItems.map(item => {
             return (
               <ListItem>
                 <Avatar>
@@ -48,7 +39,7 @@ const ShoppingList = ({ addedItems }) => {
       </List>
 
       <p>suck dick</p>
-      <h2>Total: {basket.total}</h2>
+      <h2>Total: {total}</h2>
       <Button>Checkout</Button>
     </div>
   );

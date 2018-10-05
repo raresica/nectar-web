@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 // data
-import { initializeCart, addProductToCart } from 'data/cart/actions'
+import { initializeCart,incrementProduct,decrementProduct, addProductToCart } from 'data/cart/actions'
 import { cartSelector } from 'data/cart/selectors'
 // views
 import ShoppingList from 'views/ShoppingCart/ShoppingList'
@@ -19,7 +19,12 @@ class ShoppingCart extends React.Component {
   render() {
     return (
       <div>
-        <ShoppingList total={this.props.cart.total} addedItems={this.props.cart.addedItems} />
+        <ShoppingList 
+        increment={this.props.incrementProduct} 
+        decrement={this.props.decrementProduct} 
+        total={this.props.cart.total} 
+        addedItems={this.props.cart.addedItems} 
+        />
       </div>
     )
   }
@@ -30,6 +35,6 @@ const mapState = state => {
     cart: cartSelector(state)
   })
 }
-const mapDispatch = dispatch => bindActionCreators({ initializeCart, addProductToCart }, dispatch)
+const mapDispatch = dispatch => bindActionCreators({ initializeCart,incrementProduct,decrementProduct, addProductToCart }, dispatch)
 
 export default connect(mapState, mapDispatch)(ShoppingCart)

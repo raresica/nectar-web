@@ -16,11 +16,9 @@ import Button from '@material-ui/core/Button'
 //   quantity: Number
 // }
 
-const ShoppingList = ({ addedItems,total }) => {
-  console.log(addedItems,'wawaaw')
-
+const ShoppingList = ({ addedItems,total,increment,decrement }) => {
   return (
-    <div className='wawawa'>
+    <div>
       <List>
         {
           addedItems.map(item => {
@@ -31,6 +29,8 @@ const ShoppingList = ({ addedItems,total }) => {
                 </Avatar>
                 <ListItemText primary={item.name} secondary={item.price} />
                 <h1>Quantity: {item.quantity}</h1>
+                <button onClick={()=> increment(item)}>+</button>
+                <button onClick={()=> decrement(item)}>-</button>
               </ListItem>
             )
           }

@@ -26,3 +26,35 @@ export const addProductToCart = (product) => {
     }
   }
 }
+
+export const incrementProduct = (product) => {
+  return dispatch => {
+    try {
+      const action = {
+        type: 'INCREMENT_PRODUCT',
+        payload: product
+      }
+
+      dispatch(action)
+    } catch (err) {
+      error => {
+        console.error('Error incrementing product: ', error);
+      }
+    }
+  }
+}
+export const decrementProduct = (product) => {
+  return dispatch => {
+    try {
+      const action = {
+        type: 'DECREMENT_PRODUCT',
+        payload: product
+      }
+      dispatch(action)
+    } catch (err) {
+      error => {
+        console.error('Error decrementing product: ', error);
+      }
+    }
+  }
+}

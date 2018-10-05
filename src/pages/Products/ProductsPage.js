@@ -20,7 +20,6 @@ class ProductsPage extends React.Component {
     this.props.addProduct(title, price)
   }
   render () {
-    console.log(this.props,'PROPS')
     return (
       <div>
         <form onSubmit={this.handleSubmit}>

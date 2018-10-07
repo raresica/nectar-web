@@ -6,7 +6,7 @@ import GridListTileBar from '@material-ui/core/GridListTileBar'
 import IconButton from '@material-ui/core/IconButton'
 import AddIcon from '@material-ui/icons/Add'
 
-const ProductList = ({ products }) => (
+const ProductList = ({ products, addProductToCart }) => (
   <GridList cellHeight={180}>
     <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
       <ListSubheader component="div">Products</ListSubheader>
@@ -20,7 +20,9 @@ const ProductList = ({ products }) => (
             subtitle={<span>${product.price}</span>}
             actionIcon={
               <IconButton>
-                <AddIcon color='primary' />
+                <AddIcon onClick={()=>{
+                  addProductToCart(product)
+                }} color='primary' />
               </IconButton>
             }
           />

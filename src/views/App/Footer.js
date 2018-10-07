@@ -3,6 +3,7 @@ import BottomNavigation from '@material-ui/core/BottomNavigation'
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction'
 import HomeIcon from '@material-ui/icons/Home'
 import UserIcon from '@material-ui/icons/AccountCircle'
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import NotificationsIcon from '@material-ui/icons/Notifications'
 import ListIcon from '@material-ui/icons/List'
 import { withRouter } from 'react-router-dom'
@@ -23,6 +24,7 @@ class Footer extends React.Component {
           <BottomNavigationAction label='Places' value='/' icon={<HomeIcon />} />
           <BottomNavigationAction label='Notifications' value='/about' icon={<NotificationsIcon />} />
           <BottomNavigationAction label='Profile' value='/users/profile' icon={<UserIcon />} />
+          <BottomNavigationAction label='ShoppingCart' value='/shopping-cart' icon={<ShoppingCartIcon />} />
         </BottomNavigation>
       </div>
     )

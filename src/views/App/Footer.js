@@ -23,7 +23,7 @@ class Footer extends React.Component {
           <BottomNavigationAction label='Products' value='/products' icon={<ListIcon />} />
           <BottomNavigationAction label='Places' value='/' icon={<HomeIcon />} />
           <BottomNavigationAction label='Notifications' value='/about' icon={<NotificationsIcon />} />
-          <BottomNavigationAction label='Profile' value='/users' icon={<UserIcon />} />
+          <BottomNavigationAction label='Profile' value='/users/profile' icon={<UserIcon />} />
           <BottomNavigationAction label='ShoppingCart' value='/shopping-cart' icon={<ShoppingCartIcon />} />
         </BottomNavigation>
       </div>
@@ -37,7 +37,9 @@ const styles = {
     bottom: 0,
     width: '100%',
     textAlign: 'center',
-    backgroundColor: '#F5F5F5'
+    backgroundColor: '#F5F5F5',
+    // this should go above the snackbar
+    zIndex: 1450,
   }
 }
 

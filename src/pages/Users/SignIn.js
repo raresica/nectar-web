@@ -6,9 +6,9 @@ import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
 import { Typography } from '@material-ui/core'
 // data
-import { signIn } from 'data/users/actions'
+import { signIn } from '../../data/users/actions'
 // views
-import AccountForm from 'views/Users/AccountForm'
+import AccountForm from '../../views/Users/AccountForm'
 
 class SignUpPage extends React.Component {
   render () {

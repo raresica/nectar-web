@@ -1,10 +1,10 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
 //
-import AuthenticatedRoute from 'views/App/AuthenticatedRoute'
-import SignUpPage from 'pages/Users/SignUp'
-import SignInPage from 'pages/Users/SignIn'
-import ProfilePage from 'pages/Users/Profile'
+import AuthenticatedRoute from '../AuthenticatedRoute'
+import SignUpPage from './SignUp'
+import SignInPage from './SignIn'
+import ProfilePage from './Profile'
 
 const Users = () => (
   <React.Fragment>

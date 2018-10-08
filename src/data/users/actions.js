@@ -1,6 +1,6 @@
-import * as usersApi from 'api/users'
-import { alertUser } from 'data/app/actions'
-import { log } from 'utils'
+import * as usersApi from '../../api/users'
+import { alertUser } from '../app/actions'
+import { log } from '../../utils'
 
 export const signIn = (email, password) => {
   log('Attempting sign in with: ', email, password)

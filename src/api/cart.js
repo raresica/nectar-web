@@ -1,4 +1,4 @@
-import { firestoreInstance } from 'api/firebase'
+import { firestoreInstance } from './firebase'
 
 export function submitOrder (order) {
   return firestoreInstance.collection('orders').add(order)

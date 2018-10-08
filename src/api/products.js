@@ -1,4 +1,4 @@
-import { firestoreInstance } from 'api/firebase'
+import { firestoreInstance } from './firebase'
 
 export function find () {
   return firestoreInstance.collection('products').get()

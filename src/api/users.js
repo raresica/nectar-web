@@ -1,4 +1,4 @@
-import { authInstance } from 'api/firebase'
+import { authInstance } from './firebase'
 
 export function signUp (email, password) {
   return authInstance.createUserWithEmailAndPassword(email, password)

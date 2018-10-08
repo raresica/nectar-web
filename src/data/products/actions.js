@@ -1,5 +1,6 @@
-import * as productsApi from 'api/products'
-import { log } from 'utils'
+import * as productsApi from '../../api/products'
+import { alertUser } from '../app/actions'
+import { log } from '../../utils'
 
 // interface Product {
 //   description: String;

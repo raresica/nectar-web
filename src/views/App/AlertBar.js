@@ -5,8 +5,8 @@ import Snackbar from '@material-ui/core/Snackbar'
 import Button from '@material-ui/core/Button'
 import { withStyles } from '@material-ui/core/styles'
 //
-import { nextAlertSelector } from 'data/app/selectors'
-import { dismissAlert } from 'data/app/actions'
+import { nextAlertSelector } from '../../data/app/selectors'
+import { dismissAlert } from '../../data/app/actions' //TODO lets keep this component dumb
 
 const DISMISS_BUTTON_LABEL = 'DISMISS'
 const AUTO_HIDE_DURATION = 2000

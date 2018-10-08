@@ -3,10 +3,10 @@ import { MuiThemeProvider, withStyles } from '@material-ui/core/styles'
 import { BrowserRouter as Router } from 'react-router-dom'
 import CssBaseline from '@material-ui/core/CssBaseline'
 //
-import theme from 'views/theme'
-import AlertBar from 'views/App/AlertBar'
-import Footer from 'views/App/Footer'
-import Routes from 'pages/Routes'
+import theme from './views/theme'
+import AlertBar from './views/App/AlertBar'
+import Footer from './views/App/Footer'
+import Routes from './pages/Routes'
 
 class App extends React.Component {
   render () {

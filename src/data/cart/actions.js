@@ -1,5 +1,3 @@
-import * as cartApi from '../../api/cart.js'
-
 export const initializeCart = () => {
   return dispatch => {
     const localStorage = window.localStorage

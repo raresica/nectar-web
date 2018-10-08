@@ -1,11 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-// data
+//
 import { initializeProducts, addProduct } from '../../data/products/actions'
 import { productsSelector } from '../../data/products/selectors'
 import { addProductToCart } from '../../data/cart/actions'
-// views
 import ProductList from '../../views/Products/ProductList'
 
 class ProductsPage extends React.Component {

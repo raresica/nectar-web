@@ -14,6 +14,7 @@ const Routes = () => (
     <Route path="/products" component={ProductsPage} />
     <Route path="/shopping-cart" component={ShoppingCart} />
     <Users />
+    {/* TODO: add 404 page */}
   </React.Fragment>
 )
 

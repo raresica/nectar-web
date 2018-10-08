@@ -1,4 +1,4 @@
-import * as cartApi from 'api/cart.js'
+import * as cartApi from '../../api/cart.js'
 
 export const initializeCart = () => {
   return dispatch => {
@@ -10,7 +10,7 @@ export const initializeCart = () => {
   }
 }
 
-export const addProductToCart = (product) => {
+export const addProductToCart = product => {
   return dispatch => {
     try {
       const action = {
@@ -20,14 +20,12 @@ export const addProductToCart = (product) => {
 
       dispatch(action)
     } catch (err) {
-      error => {
-        console.error('Error adding product: ', error);
-      }
+      console.error('Error adding product: ', err)
     }
   }
 }
 
-export const incrementProduct = (product) => {
+export const incrementProduct = product => {
   return dispatch => {
     try {
       const action = {
@@ -37,13 +35,11 @@ export const incrementProduct = (product) => {
 
       dispatch(action)
     } catch (err) {
-      error => {
-        console.error('Error incrementing product: ', error);
-      }
+      console.error('Error incrementing product: ', err)
     }
   }
 }
-export const decrementProduct = (product) => {
+export const decrementProduct = product => {
   return dispatch => {
     try {
       const action = {
@@ -52,9 +48,7 @@ export const decrementProduct = (product) => {
       }
       dispatch(action)
     } catch (err) {
-      error => {
-        console.error('Error decrementing product: ', error);
-      }
+      console.error('Error decrementing product: ', err)
     }
   }
 }

@@ -1,5 +1,6 @@
-import * as productsApi from 'api/products'
-import { log } from 'utils'
+import * as productsApi from '../../api/products'
+import { alertUser } from '../app/actions'
+import { log } from '../../utils'
 
 // interface Product {
 //   description: String;
@@ -11,12 +12,13 @@ import { log } from 'utils'
 
 export const initializeProducts = () => {
   return dispatch => {
-    productsApi.find()
-      .then((productList) => {
+    productsApi
+      .find()
+      .then(productList => {
         const allIds = []
         const byId = {}
 
-        productList.forEach((doc) => {
+        productList.forEach(doc => {
           const product = doc.data()
           product.id = doc.id
 
@@ -38,7 +40,8 @@ export const initializeProducts = () => {
 export const addProduct = (title, price) => {
   return dispatch => {
     const product = { title, price }
-    productsApi.create(product)
+    productsApi
+      .create(product)
       .then(id => {
         log('Document written with ID: ', id)
 

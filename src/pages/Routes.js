@@ -3,9 +3,9 @@ import { Route } from 'react-router-dom'
 //
 import Home from './Home'
 import About from './About'
-import ProductsPage from 'pages/Products/ProductsPage'
-import ShoppingCart from '../pages/ShoppingCart/ShoppingCart'
-import Users from 'pages/Users'
+import ProductsPage from './Products/ProductsPage'
+import ShoppingCart from './ShoppingCart/ShoppingCart'
+import Users from './Users'
 
 const Routes = () => (
   <React.Fragment>

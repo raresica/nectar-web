@@ -6,22 +6,21 @@ import { bindActionCreators } from 'redux'
 import { Link } from 'react-router-dom'
 import { Typography } from '@material-ui/core'
 // data
-import { signIn } from 'data/users/actions'
+import { signIn } from '../../data/users/actions'
 // views
-import AccountForm from 'views/Users/AccountForm'
+import AccountForm from '../../views/Users/AccountForm'
 
 class SignUpPage extends React.Component {
-  render () {
+  render() {
     const { classes } = this.props
 
     return (
       <div className={classes.root}>
-        <Typography variant='display3' gutterBottom>Sign in</Typography>
+        <Typography variant="display3" gutterBottom>
+          Sign in
+        </Typography>
         <Paper elevation={16} className={classes.paper}>
-          <AccountForm
-            onSubmit={this.props.signIn}
-            buttonLabel='Sign in'
-          />
+          <AccountForm onSubmit={this.props.signIn} buttonLabel="Sign in" />
         </Paper>
         <Link to="/users/sign-up">Sign up</Link>
         <Link to="/users/reset-password">Reset password</Link>
@@ -36,7 +35,7 @@ const styles = {
     margin: '16px auto',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   paper: {
     alignSelf: 'stretch',
@@ -50,4 +49,7 @@ const StyledPage = withStyles(styles)(SignUpPage)
 // actions
 const mapDispatch = dispatch => bindActionCreators({ signIn }, dispatch)
 // connect the component
-export default connect(null, mapDispatch)(StyledPage)
+export default connect(
+  null,
+  mapDispatch
+)(StyledPage)

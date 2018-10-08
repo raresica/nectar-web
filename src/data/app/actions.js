@@ -1,4 +1,4 @@
-export const alertUser = (alert) => {
+export const alertUser = alert => {
   return {
     type: 'NEW_ALERT',
     payload: alert

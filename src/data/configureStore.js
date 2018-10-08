@@ -11,13 +11,10 @@ const rootReducer = combineReducers({
   app: appReducer,
   products: productsReducer,
   users: usersReducer,
-  cart : cartReducer
+  cart: cartReducer
 })
 
-const middlewares = [
-  thunk,
-  logger
-]
+const middlewares = [thunk, logger]
 
 const configureStore = () => {
   return createStore(rootReducer, applyMiddleware(...middlewares))

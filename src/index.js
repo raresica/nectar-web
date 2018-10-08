@@ -13,7 +13,8 @@ const render = Component => {
     <Provider store={dataStore}>
       <Component />
     </Provider>,
-    rootElement)
+    rootElement
+  )
 }
 
 render(App)

@@ -5,7 +5,8 @@ import { log } from '../../utils'
 export const signIn = (email, password) => {
   log('Attempting sign in with: ', email, password)
   return dispatch => {
-    usersApi.signIn(email, password)
+    usersApi
+      .signIn(email, password)
       .then(user => {
         dispatch({ type: 'SIGN_IN', payload: user })
       })
@@ -16,7 +17,8 @@ export const signIn = (email, password) => {
 export const signUp = (email, password) => {
   log('Attempting sign up with: ', email, password)
   return dispatch => {
-    usersApi.signUp(email, password)
+    usersApi
+      .signUp(email, password)
       .then(user => {
         dispatch({ type: 'SIGN_UP', payload: user })
       })

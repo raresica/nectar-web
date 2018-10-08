@@ -20,7 +20,7 @@ class AlertBar extends React.Component {
     this.props.dismissAlert()
   }
 
-  render () {
+  render() {
     const { classes, nextAlert } = this.props
 
     if (nextAlert !== null) {
@@ -34,14 +34,10 @@ class AlertBar extends React.Component {
         className={classes.snack}
         anchorOrigin={{
           vertical: 'bottom',
-          horizontal: 'center',
+          horizontal: 'center'
         }}
         ContentProps={{ 'aria-describedby': 'snack-alert' }}
-        message={
-          <span id="snack-alert">
-            {nextAlert}
-          </span>
-        }
+        message={<span id="snack-alert">{nextAlert}</span>}
         onClose={this.handleClose}
         action={[
           <Button key="dismiss" color="secondary" size="small" onClick={this.handleClose}>
@@ -68,4 +64,7 @@ const mapState = state => ({
 
 const mapDispatch = dispatch => bindActionCreators({ dismissAlert }, dispatch)
 
-export default connect(mapState, mapDispatch)(StyledBar)
+export default connect(
+  mapState,
+  mapDispatch
+)(StyledBar)

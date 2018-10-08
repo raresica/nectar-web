@@ -5,14 +5,14 @@ import TextField from '@material-ui/core/TextField'
 import { withStyles } from '@material-ui/core/styles'
 
 class AccountForm extends React.Component {
-  handleFormSubmit = (event) => {
+  handleFormSubmit = event => {
     // prevent the form from submitting (this will trigger a refresh of the page)
     event.preventDefault()
     // extract the values from the form
     const form = event.target
     const data = {
       email: form['email-input'].value,
-      password: form['password-input'].value,
+      password: form['password-input'].value
     }
     // TODO compare password
     // passwordConfirmation: form['password-confirmation-input'].value,
@@ -21,12 +21,12 @@ class AccountForm extends React.Component {
     this.props.onSubmit(data.email, data.password)
   }
 
-  render () {
+  render() {
     const { classes, withConfirmation, buttonLabel } = this.props
 
     return (
       <form className={classes.form} onSubmit={this.handleFormSubmit}>
-        <Grid container spacing={24} direction='column'>
+        <Grid container spacing={24} direction="column">
           <Grid item xs={12}>
             <TextField
               fullWidth
@@ -35,26 +35,22 @@ class AccountForm extends React.Component {
             />
           </Grid>
           <Grid item xs={12}>
-            <TextField
-              fullWidth
-              id="password-input"
-              label="Password"
-              type='password'
-            />
+            <TextField fullWidth id="password-input" label="Password" type="password" />
           </Grid>
-          {
-            withConfirmation &&
+          {withConfirmation && (
             <Grid item xs={12}>
               <TextField
                 fullWidth
                 id="password-confirmation-input"
                 label="Password confirmation"
-                type='password'
+                type="password"
               />
             </Grid>
-          }
+          )}
           <Grid item xs={12}>
-            <Button variant='outlined' color='primary' fullWidth type='submit'>{buttonLabel}</Button>
+            <Button variant="outlined" color="primary" fullWidth type="submit">
+              {buttonLabel}
+            </Button>
           </Grid>
         </Grid>
       </form>

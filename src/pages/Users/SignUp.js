@@ -11,18 +11,16 @@ import { signUp } from '../../data/users/actions'
 import AccountForm from '../../views/Users/AccountForm'
 
 class SignUpPage extends React.Component {
-  render () {
+  render() {
     const { classes } = this.props
 
     return (
       <div className={classes.root}>
-        <Typography variant='display3' gutterBottom>Sign up</Typography>
+        <Typography variant="display3" gutterBottom>
+          Sign up
+        </Typography>
         <Paper elevation={16} className={classes.paper}>
-          <AccountForm
-            withConfirmation
-            onSubmit={this.props.signUp}
-            buttonLabel='Sign up'
-          />
+          <AccountForm withConfirmation onSubmit={this.props.signUp} buttonLabel="Sign up" />
         </Paper>
         <Link to="/users/sign-in">Sign in</Link>
         <Link to="/users/reset-password">Reset password</Link>
@@ -37,7 +35,7 @@ const styles = {
     margin: '16px auto',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   paper: {
     alignSelf: 'stretch',
@@ -51,4 +49,7 @@ const StyledPage = withStyles(styles)(SignUpPage)
 // actions
 const mapDispatch = dispatch => bindActionCreators({ signUp }, dispatch)
 // connect the component
-export default connect(null, mapDispatch)(StyledPage)
+export default connect(
+  null,
+  mapDispatch
+)(StyledPage)

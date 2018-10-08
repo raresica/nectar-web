@@ -14,17 +14,25 @@ class Footer extends React.Component {
     this.props.history.push(value)
   }
 
-  render () {
+  render() {
     const { classes, location } = this.props
 
     return (
       <div className={classes.root}>
         <BottomNavigation value={location.pathname} onChange={this.handleChange} showLabels>
-          <BottomNavigationAction label='Products' value='/products' icon={<ListIcon />} />
-          <BottomNavigationAction label='Places' value='/' icon={<HomeIcon />} />
-          <BottomNavigationAction label='Notifications' value='/about' icon={<NotificationsIcon />} />
-          <BottomNavigationAction label='Profile' value='/users/profile' icon={<UserIcon />} />
-          <BottomNavigationAction label='ShoppingCart' value='/shopping-cart' icon={<ShoppingCartIcon />} />
+          <BottomNavigationAction label="Products" value="/products" icon={<ListIcon />} />
+          <BottomNavigationAction label="Places" value="/" icon={<HomeIcon />} />
+          <BottomNavigationAction
+            label="Notifications"
+            value="/about"
+            icon={<NotificationsIcon />}
+          />
+          <BottomNavigationAction label="Profile" value="/users/profile" icon={<UserIcon />} />
+          <BottomNavigationAction
+            label="ShoppingCart"
+            value="/shopping-cart"
+            icon={<ShoppingCartIcon />}
+          />
         </BottomNavigation>
       </div>
     )
@@ -39,7 +47,7 @@ const styles = {
     textAlign: 'center',
     backgroundColor: '#F5F5F5',
     // this should go above the snackbar
-    zIndex: 1450,
+    zIndex: 1450
   }
 }
 

@@ -10,7 +10,7 @@ export const initializeCart = () => {
   }
 }
 
-export const addProductToCart = (product) => {
+export const addProductToCart = product => {
   return dispatch => {
     try {
       const action = {
@@ -20,12 +20,12 @@ export const addProductToCart = (product) => {
 
       dispatch(action)
     } catch (err) {
-      console.error('Error adding product: ', err);
+      console.error('Error adding product: ', err)
     }
   }
 }
 
-export const incrementProduct = (product) => {
+export const incrementProduct = product => {
   return dispatch => {
     try {
       const action = {
@@ -35,11 +35,11 @@ export const incrementProduct = (product) => {
 
       dispatch(action)
     } catch (err) {
-      console.error('Error incrementing product: ', err);
+      console.error('Error incrementing product: ', err)
     }
   }
 }
-export const decrementProduct = (product) => {
+export const decrementProduct = product => {
   return dispatch => {
     try {
       const action = {
@@ -48,7 +48,7 @@ export const decrementProduct = (product) => {
       }
       dispatch(action)
     } catch (err) {
-      console.error('Error decrementing product: ', err);
+      console.error('Error decrementing product: ', err)
     }
   }
 }

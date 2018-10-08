@@ -9,7 +9,7 @@ import Footer from './views/App/Footer'
 import Routes from './pages/Routes'
 
 class App extends React.Component {
-  render () {
+  render() {
     const { classes } = this.props
     // style the body element
     document.body.className = classes.prettyBody

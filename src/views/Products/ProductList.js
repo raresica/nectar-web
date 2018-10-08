@@ -11,24 +11,25 @@ const ProductList = ({ products, addProductToCart }) => (
     <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
       <ListSubheader component="div">Products</ListSubheader>
     </GridListTile>
-    {
-      products.map(product => (
-        <GridListTile key={product.id}>
-          <img src="https://picsum.photos/300/300?image=999" alt={product.name}></img>
-          <GridListTileBar
-            title={product.title}
-            subtitle={<span>${product.price}</span>}
-            actionIcon={
-              <IconButton>
-                <AddIcon onClick={()=>{
+    {products.map(product => (
+      <GridListTile key={product.id}>
+        <img src="https://picsum.photos/300/300?image=999" alt={product.name} />
+        <GridListTileBar
+          title={product.title}
+          subtitle={<span>${product.price}</span>}
+          actionIcon={
+            <IconButton>
+              <AddIcon
+                onClick={() => {
                   addProductToCart(product)
-                }} color='primary' />
-              </IconButton>
-            }
-          />
-        </GridListTile>
-      ))
-    }
+                }}
+                color="primary"
+              />
+            </IconButton>
+          }
+        />
+      </GridListTile>
+    ))}
   </GridList>
 )
 

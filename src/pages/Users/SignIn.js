@@ -16,7 +16,7 @@ class SignUpPage extends React.Component {
 
     return (
       <div className={classes.root}>
-        <Typography variant="display3" gutterBottom>
+        <Typography variant="h2" gutterBottom>
           Sign in
         </Typography>
         <Paper elevation={16} className={classes.paper}>

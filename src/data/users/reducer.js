@@ -1,5 +1,6 @@
 const initialState = {
-  currentUser: null
+  currentUser: null,
+  initialized: false
 }
 
 const reducer = (state = initialState, action) => {
@@ -7,7 +8,8 @@ const reducer = (state = initialState, action) => {
     case 'SIGN_UP':
     case 'SIGN_IN': {
       return {
-        currentUser: action.payload
+        currentUser: action.payload,
+        initialized: true
       }
     }
 

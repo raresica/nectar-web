@@ -9,6 +9,9 @@ import 'typeface-roboto'
  * https://material-ui.com/customization/default-theme/
  */
 const theme = createMuiTheme({
+  typography: {
+    useNextVariants: true
+  },
   palette: {
     primary: orange,
     secondary: purple

@@ -1,16 +1,17 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+import React from "react"
+import { connect } from "react-redux"
+import { bindActionCreators } from "redux"
 // data
 import {
   initializeCart,
   incrementProduct,
   decrementProduct,
   addProductToCart
-} from '../../data/cart/actions'
-import { cartSelector } from '../../data/cart/selectors'
+} from "../../data/cart/actions"
+import { cartSelector } from "../../data/cart/selectors"
 // views
-import ShoppingList from '../../views/ShoppingCart/ShoppingList'
+import ShoppingList from "../../views/ShoppingCart/ShoppingList"
+import SimpleModal from  "../../views/Modal"
 
 class ShoppingCart extends React.Component {
   componentDidMount() {
@@ -30,6 +31,7 @@ class ShoppingCart extends React.Component {
           total={this.props.cart.total}
           addedItems={this.props.cart.addedItems}
         />
+        <SimpleModal/>
       </div>
     )
   }

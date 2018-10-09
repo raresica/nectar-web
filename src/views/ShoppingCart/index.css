@@ -1,0 +1,7 @@
+.shoppingListTotal{
+    float: right;
+    margin-right: 3.5%;
+}
+.shoppingListTotal .checkoutButton{
+    float: right;
+}

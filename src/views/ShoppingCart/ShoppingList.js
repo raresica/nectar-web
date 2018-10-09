@@ -9,6 +9,7 @@ import ImageIcon from '@material-ui/icons/Image'
 import WorkIcon from '@material-ui/icons/Work'
 import BeachAccessIcon from '@material-ui/icons/BeachAccess'
 import Button from '@material-ui/core/Button'
+require('./index.css')
 
 // const AddedItem = {
 //   name: String,
@@ -34,10 +35,10 @@ const ShoppingList = ({ addedItems, total, increment, decrement }) => {
           )
         })}
       </List>
-
-      <p>suck dick</p>
-      <h2>Total: {total}</h2>
-      <Button>Checkout</Button>
+      <div className="shoppingListTotal">
+        <h2>Total: {total}</h2>
+        <Button className="checkoutButton">Checkout</Button>
+      </div>
     </div>
   )
 }

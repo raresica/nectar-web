@@ -32,9 +32,7 @@ export const initializeUser = () => {
   return dispatch => {
     const user = JSON.parse(localStorage.getItem('users.currentUser'))
 
-    if (user) {
-      dispatch({ type: 'SIGN_IN', payload: user })
-    }
+    dispatch({ type: 'SIGN_IN', payload: user })
   }
 }
 

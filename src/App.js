@@ -7,6 +7,7 @@ import theme from './views/theme'
 import AlertBar from './views/App/AlertBar'
 import Footer from './views/App/Footer'
 import Routes from './pages/Routes'
+import Header from './views/App/Header'
 
 class App extends React.Component {
   render() {
@@ -20,8 +21,11 @@ class App extends React.Component {
         <CssBaseline />
         <MuiThemeProvider theme={theme}>
           <Router>
-            <div className={classes.app}>
-              <Routes />
+            <div>
+              <Header />
+              <div className={classes.appContent}>
+                <Routes />
+              </div>
               <AlertBar />
               <Footer />
             </div>
@@ -34,11 +38,19 @@ class App extends React.Component {
 
 const styles = {
   prettyBody: {
-    backgroundColor: theme.palette.primary[100],
+    backgroundColor: theme.palette.grey[100],
     fontFamily: theme.typography.fontFamily
   },
-  app: {
-    overflow: 'hidden'
+  appContent: {
+    height: '100vh',
+    // header
+    paddingTop: 56,
+    [theme.breakpoints.up('sm')]: {
+      paddingTop: 64
+    },
+    // footer
+    paddingBottom: 56,
+    overflow: 'auto'
   }
 }
 

@@ -8,8 +8,10 @@ export const initializeCart = () => {
   }
 }
 
-export const addProductToCart = product => {
-  return dispatch => {
+export const addProductToCart = productId => {
+  return (dispatch, getStore) => {
+    const product = getStore().products.byId[productId]
+    console.log(product)
     try {
       const action = {
         type: 'ADD_TO_CART',

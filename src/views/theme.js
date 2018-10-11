@@ -1,6 +1,6 @@
 import { createMuiTheme } from '@material-ui/core/styles'
 import purple from '@material-ui/core/colors/purple'
-import orange from '@material-ui/core/colors/orange'
+// import orange from '@material-ui/core/colors/orange'
 import 'typeface-montserrat'
 import 'typeface-roboto'
 
@@ -13,8 +13,8 @@ const theme = createMuiTheme({
     useNextVariants: true
   },
   palette: {
-    primary: orange,
-    secondary: purple
+    primary: purple
+    // secondary: orange
   }
 })
 

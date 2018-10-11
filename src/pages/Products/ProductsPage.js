@@ -21,6 +21,7 @@ class ProductsPage extends React.Component {
   render() {
     return (
       <div>
+        <ProductList onProductAdd={this.props.addProductToCart} products={this.props.products} />
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="title">
             Title:
@@ -32,10 +33,6 @@ class ProductsPage extends React.Component {
           </label>
           <input type="submit" value="Submit" />
         </form>
-        <ProductList
-          addProductToCart={this.props.addProductToCart}
-          products={this.props.products}
-        />
       </div>
     )
   }
